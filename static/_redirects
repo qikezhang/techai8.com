@@ -1,0 +1,9 @@
+# 重定向规则
+# 格式: /old-path /new-path [status-code]
+
+# 示例重定向（可以根据需要修改）
+# /old-blog/* /post/:splat 301
+# /blog/* /post/:splat 301
+
+# 404页面处理
+# /* /404.html 404
