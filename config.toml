@@ -3,7 +3,7 @@ title = "TechAI8.com"
 languageCode = "zh-cn"
 theme = "mainroad"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+googleAnalytics = "G-DHLCW2VY08" # Google Analytics tracking ID
 
 [pagination]
   pagerSize = 10 # Number of posts per page
