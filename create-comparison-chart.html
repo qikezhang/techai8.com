@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI图像生成工具对比图表</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .chart-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #333;
+        }
+        
+        .tool-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            font-size: 18px;
+        }
+        
+        .metric {
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            background: #f8f9fa;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .score {
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .score-high { background: #28a745; }
+        .score-medium { background: #ffc107; color: #333; }
+        .score-low { background: #dc3545; }
+        
+        .stars {
+            font-size: 18px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">AI图像生成工具对比分析</div>
+        
+        <div class="comparison-grid">
+            <!-- Headers -->
+            <div class="header">评估维度</div>
+            <div class="header tool-header">Midjourney</div>
+            <div class="header tool-header">DALL-E 3</div>
+            <div class="header tool-header">Stable Diffusion</div>
+            
+            <!-- 艺术性 -->
+            <div class="metric">艺术表现力</div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div>优秀</div>
+            </div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <div>良好</div>
+            </div>
+            <div class="score score-medium">
+                <div class="stars">⭐⭐⭐</div>
+                <div>一般</div>
+            </div>
+            
+            <!-- 真实感 -->
+            <div class="metric">真实感</div>
+            <div class="score score-medium">
+                <div class="stars">⭐⭐⭐</div>
+                <div>一般</div>
+            </div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div>优秀</div>
+            </div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <div>良好</div>
+            </div>
+            
+            <!-- 易用性 -->
+            <div class="metric">新手友好度</div>
+            <div class="score score-medium">
+                <div class="stars">⭐⭐⭐</div>
+                <div>一般</div>
+            </div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div>优秀</div>
+            </div>
+            <div class="score score-low">
+                <div class="stars">⭐⭐</div>
+                <div>困难</div>
+            </div>
+            
+            <!-- 定制化 -->
+            <div class="metric">定制化程度</div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <div>良好</div>
+            </div>
+            <div class="score score-medium">
+                <div class="stars">⭐⭐⭐</div>
+                <div>一般</div>
+            </div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div>优秀</div>
+            </div>
+            
+            <!-- 成本 -->
+            <div class="metric">成本效益</div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <div>$10-60/月</div>
+            </div>
+            <div class="score score-medium">
+                <div class="stars">⭐⭐⭐</div>
+                <div>$20/月</div>
+            </div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div>免费</div>
+            </div>
+            
+            <!-- 商业用途 -->
+            <div class="metric">商业友好度</div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <div>良好</div>
+            </div>
+            <div class="score score-high">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div>优秀</div>
+            </div>
+            <div class="score score-medium">
+                <div class="stars">⭐⭐⭐</div>
+                <div>一般</div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color score-high"></div>
+                <span>优秀表现</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color score-medium"></div>
+                <span>中等表现</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color score-low"></div>
+                <span>需要改进</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            TechAI8.com - AI图像生成工具专业对比分析
+        </div>
+    </div>
+    
+    <script>
+        // 可以添加交互功能
+        console.log('AI图像生成工具对比图表已加载');
+    </script>
+</body>
+</html>

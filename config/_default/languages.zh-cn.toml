@@ -1,0 +1,19 @@
+disabled = false
+languageCode = "zh-cn"
+languageName = "中文"
+weight = 1
+title = "TechAI8.com"
+
+[params]
+  displayName = "CN"
+  isoCode = "zh-cn"
+  rtl = false
+  dateFormat = "2006-01-02"
+  description = "TechAI8.com - AI技术分享与前沿科技资讯"
+
+[params.author]
+  name = "TechAI8"
+  imageQuality = 96
+  headline = "专注于AI技术分享和前沿科技资讯"
+  bio = "专注于AI技术分享和前沿科技资讯的技术博客"
+
