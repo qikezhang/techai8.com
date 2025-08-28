@@ -1,0 +1,82 @@
+{{/* 
+  Reactions shortcode for displaying colleague reactions
+  Usage: {{< reactions >}}
+*/}}
+
+{{ $reactions := .Page.Params.reactions }}
+{{ if $reactions }}
+<div class="reactions-container mt-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+  <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
+    <i class="fas fa-comments mr-2"></i>
+    Colleague Reactions
+  </h3>
+  
+  <div class="space-y-4">
+    {{ range $reactions }}
+      {{ $authorData := index $.Site.Data.authors .author }}
+      {{ if $authorData }}
+        <div class="reaction-item p-4 bg-white dark:bg-gray-700 rounded-lg border-l-4" 
+             style="border-left-color: {{ $authorData.colorPalette.primary }};">
+          
+          <div class="flex items-start space-x-3">
+            <!-- Author Avatar -->
+            <div class="flex-shrink-0">
+              {{ if $authorData.avatar }}
+                <img src="{{ $authorData.avatar }}" 
+                     alt="{{ $authorData.name }}" 
+                     class="w-10 h-10 rounded-full">
+              {{ else }}
+                <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold"
+                     style="background-color: {{ $authorData.colorPalette.primary }};">
+                  {{ substr $authorData.name 0 1 }}
+                </div>
+              {{ end }}
+            </div>
+            
+            <!-- Reaction Content -->
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center space-x-2 mb-2">
+                <h4 class="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  {{ $authorData.name }}
+                </h4>
+                <span class="text-xs text-gray-500 dark:text-gray-400">
+                  {{ $authorData.role }}
+                </span>
+                {{ if .verdict }}
+                  <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium
+                    {{ if eq .verdict "bullish" }}bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100{{ end }}
+                    {{ if eq .verdict "neutral" }}bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100{{ end }}
+                    {{ if eq .verdict "cautious" }}bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100{{ end }}">
+                    {{ if eq .verdict "bullish" }}📈 Bullish{{ end }}
+                    {{ if eq .verdict "neutral" }}⚖️ Neutral{{ end }}
+                    {{ if eq .verdict "cautious" }}⚠️ Cautious{{ end }}
+                  </span>
+                {{ end }}
+              </div>
+              
+              <div class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                {{ .content | markdownify }}
+              </div>
+              
+              {{ if .lang }}
+                <div class="mt-2">
+                  <span class="inline-flex items-center px-2 py-1 rounded text-xs bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300">
+                    {{ if eq .lang "en" }}🇺🇸 English{{ end }}
+                    {{ if eq .lang "zh-hant" }}🇹🇼 繁體中文{{ end }}
+                    {{ if eq .lang "ja" }}🇯🇵 日本語{{ end }}
+                  </span>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+  
+  <div class="mt-4 text-xs text-gray-500 dark:text-gray-400">
+    <i class="fas fa-info-circle mr-1"></i>
+    Reactions represent individual perspectives and may not reflect the official position of TechAI8.
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,65 @@
+[[main]]
+  name = "首頁"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "新聞"
+  pageRef = "/news"
+  weight = 20
+
+[[main]]
+  name = "評測"
+  pageRef = "/reviews"
+  weight = 30
+
+[[main]]
+  name = "排行榜"
+  pageRef = "/rankings"
+  weight = 40
+
+[[main]]
+  name = "指南"
+  pageRef = "/guides"
+  weight = 50
+
+[[main]]
+  name = "教程"
+  pageRef = "/tutorials"
+  weight = 60
+
+[[main]]
+  name = "專題"
+  pageRef = "/topics"
+  weight = 70
+
+[[main]]
+  name = "資源"
+  pageRef = "/resources"
+  weight = 80
+
+[[main]]
+  name = "關於"
+  pageRef = "/about"
+  weight = 90
+
+# Footer menu
+[[footer]]
+  name = "關於"
+  pageRef = "/about"
+  weight = 10
+
+[[footer]]
+  name = "聯繫"
+  pageRef = "/contact"
+  weight = 20
+
+[[footer]]
+  name = "隱私"
+  pageRef = "/privacy"
+  weight = 30
+
+[[footer]]
+  name = "條款"
+  pageRef = "/terms"
+  weight = 40

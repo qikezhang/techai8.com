@@ -6,8 +6,8 @@ enableA11y = false
 enableSearch = true
 enableCodeCopy = false
 
-# 主内容区块（与你当前站点一致）
-mainSections = ["post", "docs"]
+# TechAI8 主要内容区块
+mainSections = ["news", "reviews", "rankings", "guides", "tutorials", "topics", "resources"]
 
 disableImageOptimization = false
 disableImageOptimizationMD = false
@@ -28,7 +28,7 @@ disableTextInHeader = false
   showRecent = true
   showRecentItems = 5
   showMoreLink = false
-  showMoreLinkDest = "/posts/"
+  showMoreLinkDest = "/news/"
   cardView = false
   cardViewScreenWidth = false
 
@@ -71,4 +71,33 @@ disableTextInHeader = false
 
 [sitemap]
   excludedKinds = ["taxonomy", "term"]
+
+# AdSense 配置 (生产环境时填入真实值)
+[adsense]
+  publisher_id = "ca-pub-XXXXXXXXXX"  # 替换为真实的 AdSense Publisher ID
+  [adsense.slots]
+    in_article = "1234567890"         # 文章内广告位 ID
+    sidebar = "1234567891"            # 侧边栏广告位 ID
+    list_page = "1234567892"          # 列表页广告位 ID
+    mobile_sticky = "1234567893"      # 移动端粘性广告位 ID
+    default = "1234567894"            # 默认广告位 ID
+
+# TechAI8 特定配置
+[techai8]
+  # 数字记者配置
+  enableReactions = true
+  enableComparisons = true
+  enableAIDisclosure = true
+
+  # 内容质量配置
+  [techai8.quality]
+    minSources = 2
+    requireOfficialSource = true
+    enableFactCheck = true
+
+  # 多语言配置
+  [techai8.multilingual]
+    enableHreflang = true
+    enableAutoTranslate = false
+    defaultRegion = "Global"
 

@@ -1,0 +1,65 @@
+[[main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "News"
+  pageRef = "/news"
+  weight = 20
+
+[[main]]
+  name = "Reviews"
+  pageRef = "/reviews"
+  weight = 30
+
+[[main]]
+  name = "Rankings"
+  pageRef = "/rankings"
+  weight = 40
+
+[[main]]
+  name = "Guides"
+  pageRef = "/guides"
+  weight = 50
+
+[[main]]
+  name = "Tutorials"
+  pageRef = "/tutorials"
+  weight = 60
+
+[[main]]
+  name = "Topics"
+  pageRef = "/topics"
+  weight = 70
+
+[[main]]
+  name = "Resources"
+  pageRef = "/resources"
+  weight = 80
+
+[[main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 90
+
+# Footer menu
+[[footer]]
+  name = "About"
+  pageRef = "/about"
+  weight = 10
+
+[[footer]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 20
+
+[[footer]]
+  name = "Privacy"
+  pageRef = "/privacy"
+  weight = 30
+
+[[footer]]
+  name = "Terms"
+  pageRef = "/terms"
+  weight = 40

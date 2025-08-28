@@ -1,0 +1,82 @@
+{{/* 
+  AdSense advertisement shortcode
+  Usage: {{< ad slot="in-article" >}} or {{< ad slot="sidebar" >}}
+*/}}
+
+{{ $slot := .Get "slot" | default "in-article" }}
+{{ $format := .Get "format" | default "auto" }}
+{{ $responsive := .Get "responsive" | default "true" }}
+
+{{ if .Site.Params.adsense.publisher_id }}
+<div class="ad-container ad-{{ $slot }}" style="text-align: center; margin: 2rem 0;">
+  <!-- AdSense Advertisement -->
+  <div class="ad-label text-xs text-gray-400 mb-2">Advertisement</div>
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.adsense.publisher_id }}"
+          crossorigin="anonymous"></script>
+  
+  {{ if eq $slot "in-article" }}
+  <!-- In-Article Ad -->
+  <ins class="adsbygoogle"
+       style="display:block; text-align:center;"
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       data-ad-client="{{ .Site.Params.adsense.publisher_id }}"
+       data-ad-slot="{{ .Site.Params.adsense.slots.in_article | default "1234567890" }}"></ins>
+  
+  {{ else if eq $slot "sidebar" }}
+  <!-- Sidebar Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ .Site.Params.adsense.publisher_id }}"
+       data-ad-slot="{{ .Site.Params.adsense.slots.sidebar | default "1234567890" }}"
+       data-ad-format="{{ $format }}"
+       {{ if eq $responsive "true" }}data-full-width-responsive="true"{{ end }}></ins>
+  
+  {{ else if eq $slot "list-page" }}
+  <!-- List Page Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-format="autorelaxed"
+       data-ad-client="{{ .Site.Params.adsense.publisher_id }}"
+       data-ad-slot="{{ .Site.Params.adsense.slots.list_page | default "1234567890" }}"></ins>
+  
+  {{ else if eq $slot "mobile-sticky" }}
+  <!-- Mobile Sticky Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ .Site.Params.adsense.publisher_id }}"
+       data-ad-slot="{{ .Site.Params.adsense.slots.mobile_sticky | default "1234567890" }}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  
+  {{ else }}
+  <!-- Default/Custom Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ .Site.Params.adsense.publisher_id }}"
+       data-ad-slot="{{ .Site.Params.adsense.slots.default | default "1234567890" }}"
+       data-ad-format="{{ $format }}"
+       {{ if eq $responsive "true" }}data-full-width-responsive="true"{{ end }}></ins>
+  {{ end }}
+  
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  
+  <div class="ad-disclaimer text-xs text-gray-400 mt-2">
+    <a href="/privacy#advertising" class="text-gray-400 hover:text-gray-600">Ad Policy</a>
+  </div>
+</div>
+
+{{ else }}
+<!-- Development/Preview Mode - Show Placeholder -->
+<div class="ad-placeholder bg-gray-100 dark:bg-gray-700 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center my-8">
+  <div class="text-gray-500 dark:text-gray-400">
+    <i class="fas fa-ad text-2xl mb-2"></i>
+    <div class="text-sm font-medium">Advertisement Placeholder</div>
+    <div class="text-xs mt-1">Slot: {{ $slot }} | Format: {{ $format }}</div>
+    <div class="text-xs text-gray-400 mt-2">Configure AdSense in site params to show ads</div>
+  </div>
+</div>
+{{ end }}

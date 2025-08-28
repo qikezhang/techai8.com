@@ -1,0 +1,108 @@
+# TechAI8 主题分类配置
+
+topics:
+  ai-apps:
+    name: "AI Apps"
+    slug: "ai-apps"
+    description: "AI personal application software and tools"
+    icon: "🤖"
+    color: "#5B8CFF"
+    keywords: ["artificial intelligence", "AI tools", "machine learning", "automation"]
+    
+  fintech:
+    name: "FinTech"
+    slug: "fintech"
+    description: "Financial technology applications and innovations"
+    icon: "💰"
+    color: "#16A085"
+    keywords: ["financial technology", "digital banking", "payments", "blockchain finance"]
+    
+  web3-innovation:
+    name: "Web3 Innovation"
+    slug: "web3-innovation"
+    description: "Web3 innovation and decentralized product tutorials"
+    icon: "🌐"
+    color: "#0E7490"
+    keywords: ["web3", "blockchain", "cryptocurrency", "DeFi", "NFT", "decentralized"]
+    
+  smart-devices:
+    name: "Smart Devices"
+    slug: "smart-devices"
+    description: "Intelligent hardware devices and IoT solutions"
+    icon: "📱"
+    color: "#3A6EA5"
+    keywords: ["smart devices", "IoT", "wearables", "smart home", "hardware"]
+
+# 内容类型配置
+contentTypes:
+  news:
+    name: "News"
+    description: "Latest industry news and updates"
+    icon: "📰"
+    
+  reviews:
+    name: "Reviews"
+    description: "In-depth product reviews and comparisons"
+    icon: "⭐"
+    
+  rankings:
+    name: "Rankings"
+    description: "Curated lists and rankings"
+    icon: "🏆"
+    
+  guides:
+    name: "Guides"
+    description: "Step-by-step guides and tutorials"
+    icon: "📖"
+    
+  tutorials:
+    name: "Tutorials"
+    description: "Detailed technical tutorials"
+    icon: "🎓"
+    
+  topics:
+    name: "Topics"
+    description: "Topic-based content aggregation"
+    icon: "🏷️"
+    
+  resources:
+    name: "Resources"
+    description: "Tools, templates, and resources"
+    icon: "🛠️"
+
+# 地区配置
+regions:
+  US:
+    name: "United States"
+    flag: "🇺🇸"
+    timezone: "America/New_York"
+    
+  EU:
+    name: "European Union"
+    flag: "🇪🇺"
+    timezone: "Europe/London"
+    
+  JP:
+    name: "Japan"
+    flag: "🇯🇵"
+    timezone: "Asia/Tokyo"
+    
+  TW:
+    name: "Taiwan"
+    flag: "🇹🇼"
+    timezone: "Asia/Taipei"
+    
+  HK:
+    name: "Hong Kong"
+    flag: "🇭🇰"
+    timezone: "Asia/Hong_Kong"
+    
+  SG:
+    name: "Singapore"
+    flag: "🇸🇬"
+    timezone: "Asia/Singapore"
+    
+  Global:
+    name: "Global"
+    flag: "🌍"
+    timezone: "UTC"

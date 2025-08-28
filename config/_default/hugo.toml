@@ -1,15 +1,49 @@
-# Hugo site configuration for Blowfish (Git submodule install)
-# Using theme directory, so set `theme = "blowfish"` here
+# TechAI8.com - AI驱动的多语言科技媒体平台
+# Hugo site configuration for Blowfish theme
 
 theme = "blowfish"
-baseURL = "/"
-defaultContentLanguage = "zh-cn"
+baseURL = "https://techai8.com"
+title = "TechAI8 - AI, FinTech & Web3 Innovation"
+defaultContentLanguage = "en"
 enableRobotsTXT = true
-summaryLength = 0
+summaryLength = 30
 
 enableEmoji = true
+enableGitInfo = true
 
 googleAnalytics = "G-DHLCW2VY08"
+
+# 多语言配置
+[languages]
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    weight = 1
+    title = "TechAI8 - AI, FinTech & Web3 Innovation"
+    [languages.en.params]
+      displayName = "EN"
+      isoCode = "en"
+      rtl = false
+
+  [languages.zh-hant]
+    languageCode = "zh-hant"
+    languageName = "繁體中文"
+    weight = 2
+    title = "TechAI8 - AI、金融科技與 Web3 創新"
+    [languages.zh-hant.params]
+      displayName = "繁中"
+      isoCode = "zh-hant"
+      rtl = false
+
+  [languages.ja]
+    languageCode = "ja"
+    languageName = "日本語"
+    weight = 3
+    title = "TechAI8 - AI、フィンテック、Web3イノベーション"
+    [languages.ja.params]
+      displayName = "日本語"
+      isoCode = "ja"
+      rtl = false
 
 [pagination]
   pagerSize = 10
@@ -22,6 +56,9 @@ googleAnalytics = "G-DHLCW2VY08"
   category = "categories"
   author = "authors"
   series = "series"
+  topic = "topics"
+  vendor = "vendors"
+  product = "products"
 
 [sitemap]
   changefreq = "daily"

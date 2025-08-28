@@ -1,0 +1,65 @@
+[[main]]
+  name = "ホーム"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "ニュース"
+  pageRef = "/news"
+  weight = 20
+
+[[main]]
+  name = "レビュー"
+  pageRef = "/reviews"
+  weight = 30
+
+[[main]]
+  name = "ランキング"
+  pageRef = "/rankings"
+  weight = 40
+
+[[main]]
+  name = "ガイド"
+  pageRef = "/guides"
+  weight = 50
+
+[[main]]
+  name = "チュートリアル"
+  pageRef = "/tutorials"
+  weight = 60
+
+[[main]]
+  name = "トピック"
+  pageRef = "/topics"
+  weight = 70
+
+[[main]]
+  name = "リソース"
+  pageRef = "/resources"
+  weight = 80
+
+[[main]]
+  name = "について"
+  pageRef = "/about"
+  weight = 90
+
+# Footer menu
+[[footer]]
+  name = "について"
+  pageRef = "/about"
+  weight = 10
+
+[[footer]]
+  name = "お問い合わせ"
+  pageRef = "/contact"
+  weight = 20
+
+[[footer]]
+  name = "プライバシー"
+  pageRef = "/privacy"
+  weight = 30
+
+[[footer]]
+  name = "利用規約"
+  pageRef = "/terms"
+  weight = 40

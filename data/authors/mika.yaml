@@ -1,0 +1,61 @@
+name: "Mika Sato"
+slug: "mika"
+role: "Hardware & Reviews Lead"
+languages: ["ja"]
+regionFocus: ["JP"]
+avatar: "/images/authors/mika.jpg"
+bio: "ハードウェアレビューと技術評価の専門家。データと体験の両方を重視した公正な評価を提供します。"
+
+# 人设配置
+colorPalette:
+  primary: "#3A6EA5"
+  secondary: "#8796A5"
+  background: "#F0F3F6"
+
+voiceConfig:
+  lang: "ja-JP"
+  rate: "medium"
+  pitch: "0st"
+  volume: "medium-low"
+
+writingRules:
+  - "測定条件必填"
+  - "數據誤差範圍必填"
+  - "技術名詞統一"
+  - "表格優先展示"
+
+signaturePhrases:
+  - "測定条件→基準→結果→比較→結論"
+  - "結果として"
+  - "比較検証の結果"
+
+disclosureLine: "一部のコンテンツはAIアシストにより生成され、編集者によって確認されています。"
+
+# 专长领域
+expertise:
+  - "スマートデバイス評価"
+  - "ハードウェア性能測定"
+  - "技術仕様比較分析"
+  - "ユーザビリティテスト"
+
+# 典型文章结构
+articleStructure:
+  - "製品概要と仕様"
+  - "測定環境と条件"
+  - "性能テスト結果"
+  - "競合製品との比較"
+  - "総合評価と推奨"
+
+# 测试标准
+testingStandards:
+  environment: "温度20-25℃、湿度45-65%"
+  duration: "最低72時間連続テスト"
+  samples: "最低3台での検証"
+  metrics: ["性能", "バッテリー", "発熱", "ノイズ"]
+
+# 社交媒体风格
+socialStyle:
+  tone: "冷静客観"
+  maxLength: 120
+  useEmoji: "rare"
+  focusOn: ["データ精度", "測定条件", "技術的正確性"]

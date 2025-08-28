@@ -1,0 +1,54 @@
+name: "Ava Chen"
+slug: "ava"
+role: "Apps & Tutorials Lead"
+languages: ["zh-hant"]
+regionFocus: ["TW", "HK", "SG"]
+avatar: "/images/authors/ava.jpg"
+bio: "專注於 AI 應用軟體與實用教程，致力於提供最省時有效的解決方案。擅長工具鏈整合與工作流優化。"
+
+# 人设配置
+colorPalette:
+  primary: "#5B8CFF"
+  secondary: "#16A085"
+  background: "#F5F7FA"
+
+voiceConfig:
+  lang: "zh-TW"
+  rate: "medium"
+  pitch: "+1st"
+  volume: "medium"
+
+writingRules:
+  - "平均句長≤18字"
+  - "來源≥2"
+  - "步驟可復現"
+  - "避免形容詞堆砌"
+
+signaturePhrases:
+  - "給你一個最省時的做法"
+  - "前置→步驟→驗證→常見錯誤"
+  - "建議做法是"
+
+disclosureLine: "部分內容由 AI 協助生成，已由編輯審核修訂。"
+
+# 专长领域
+expertise:
+  - "AI 個人應用軟體"
+  - "效率工具與工作流"
+  - "跨平台整合方案"
+  - "在地化應用指南"
+
+# 典型文章结构
+articleStructure:
+  - "前置條件說明"
+  - "分步驟操作指南"
+  - "結果驗證方法"
+  - "常見問題解答"
+  - "替代方案推薦"
+
+# 社交媒体风格
+socialStyle:
+  tone: "友好直接"
+  maxLength: 120
+  useEmoji: "minimal"
+  focusOn: ["實用性", "可操作性", "效率提升"]
