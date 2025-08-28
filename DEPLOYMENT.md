@@ -1,47 +1,80 @@
-# 部署指南
+# TechAI8.com 部署指南
 
-本文档介绍如何将TechAI8.com网站部署到各种托管平台。
+本文档介绍 TechAI8.com 的自动化部署流程和配置。
 
-## 构建网站
+## 🚀 当前部署架构
 
-在部署之前，首先需要构建静态网站：
-
-```bash
-# 使用构建脚本
-./build.sh
-
-# 或者直接使用Hugo命令
-hugo
+### 自动化部署流程
+```
+本地开发 → GitHub → GitHub Actions → Hugo 构建 → Cloudflare VPS → https://techai8.com
 ```
 
-构建完成后，所有静态文件将生成在 `public/` 目录中。
+### 仓库结构
+- **主仓库**: `https://github.com/qikezhang/techai8.com` (网站代码)
+- **文档仓库**: `https://github.com/qikezhang/techai8.op` (技术文档)
+- **生产域名**: `https://techai8.com`
 
-## 部署选项
+## 📝 日常部署流程
 
-### 1. GitHub Pages
+### 本地开发
+```bash
+# 1. 启动开发服务器
+./start-server.sh
+# 或者
+hugo server -D
 
-1. 将代码推送到GitHub仓库
-2. 在仓库设置中启用GitHub Pages
-3. 选择从 `main` 分支的 `public/` 目录部署
+# 2. 访问本地预览
+open http://localhost:1313
+```
 
-### 2. Netlify
+### 发布到生产环境
+```bash
+# 1. 提交所有更改
+git add .
+git commit -m "描述你的更改"
 
-1. 连接GitHub仓库到Netlify
-2. 设置构建命令：`hugo`
-3. 设置发布目录：`public`
-4. 自动部署设置完成
+# 2. 推送到 GitHub
+git push origin main
 
-### 3. Vercel
+# 3. 自动部署 (无需手动操作)
+# GitHub Actions 会自动：
+# - 检测到推送
+# - 运行 Hugo 构建
+# - 部署到 Cloudflare VPS
+# - 更新 https://techai8.com
+```
 
-1. 导入GitHub仓库到Vercel
-2. Vercel会自动检测Hugo项目
-3. 自动配置构建和部署设置
+### 部署状态检查
+- **GitHub Actions**: 查看构建日志
+- **网站状态**: 访问 https://techai8.com 确认更新
+- **构建时间**: 通常 2-5 分钟完成部署
 
-### 4. 传统Web服务器
+## 🔧 技术配置详情
 
-1. 运行 `./build.sh` 构建网站
-2. 将 `public/` 目录中的所有文件上传到服务器
-3. 配置Web服务器指向上传的文件
+### 当前部署架构
+- **托管平台**: Cloudflare VPS
+- **构建工具**: GitHub Actions + Hugo
+- **CDN**: Cloudflare 全球加速
+- **域名**: techai8.com (自动 HTTPS)
+
+### GitHub Actions 工作流
+当前使用的自动化部署配置已设置完成，包括：
+- 代码推送触发
+- Hugo 构建 (--minify)
+- 自动部署到 Cloudflare VPS
+- 域名和 SSL 自动配置
+
+### 替代部署选项 (备用方案)
+
+#### Vercel 部署
+1. 导入 GitHub 仓库到 Vercel
+2. 自动检测 Hugo 项目配置
+3. 一键部署和自定义域名
+
+#### Netlify 部署
+1. 连接 GitHub 仓库
+2. 构建命令: `hugo --minify`
+3. 发布目录: `public`
 
 ## 自动化部署
 
