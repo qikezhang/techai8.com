@@ -1,0 +1,17 @@
+{{/*
+  cfimage shortcode
+  Usage: {{< cfimage src="media/originals/images/2025/09/foo.png" variant="card" alt="描述" >}}
+  Behavior: If data/media_map.json contains a matching cf_image_id for src, output Cloudflare Images CDN URL with desired variant;
+            otherwise fallback to the repository-relative local path for local preview.
+  Variants: hero | card | thumb | avatar
+*/}}
+{{ $src := .Get "src" }}
+{{ $variant := or (.Get "variant") "card" }}
+{{ $alt := .Get "alt" }}
+{{ $m := index site.Data.media_map $src }}
+{{ if and $m $m.cf_image_id }}
+  <img src="https://i.techai8.com/{{ $m.cf_image_id }}/{{ $variant }}" alt="{{ $alt }}" loading="lazy" />
+{{ else }}
+  <img src="/{{ $src }}" alt="{{ $alt }}" loading="lazy" />
+{{ end }}
+
